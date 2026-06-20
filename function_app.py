@@ -33,8 +33,8 @@ def chat(req: func.HttpRequest) -> func.HttpResponse:
         credential = DefaultAzureCredential()
         secret_client = SecretClient(vault_url=kv_url, credential=credential)
 
-        openai_key = secret_client.get_secret("openai-key").value
-        openai_endpoint = secret_client.get_secret("openai-endpoint").value
+        openai_key = secret_client.get_secret("mt-poc1-openai-key").value
+        openai_endpoint = secret_client.get_secret("mt-poc1-endpoint").value
 
         client = AzureOpenAI(
             api_key=openai_key,
