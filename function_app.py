@@ -43,7 +43,7 @@ def chat(req: func.HttpRequest) -> func.HttpResponse:
         )
 
         response = client.chat.completions.create(
-            model="gpt-35-turbo",
+            model="gpt-4o-mini",
             messages=[
                 {
                     "role": "system",
