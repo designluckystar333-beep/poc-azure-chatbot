@@ -5,9 +5,9 @@ from azure.identity import DefaultAzureCredential
 from openai import AzureOpenAI
 import os
 
-app = func.FunctionApp()
+app = func.FunctionApp(http_auth_level=func.AuthLevel.FUNCTION)
 
-@app.function_trigger_route(route="chat", methods=["POST"])
+@app.route(route="chat", methods=["POST"])
 def chat(req: func.HttpRequest) -> func.HttpResponse:
     """シンプルな Q&A エンドポイント"""
     
